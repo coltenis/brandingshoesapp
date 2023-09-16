@@ -1,0 +1,163 @@
+.containerCliForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  align-content: center;
+  flex-wrap: nowrap;
+}
+
+.contentInputsCliForm {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 600px;
+}
+
+.inputsTextCliForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background: white;
+  margin: 0px 5px;
+  width: 100%;
+}
+
+.show {
+  display: flex;
+}
+
+.hidden {
+  display: none!important;
+}
+
+.contentGeneCheckbox {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentTerminosCheckbox {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  margin: 10px;
+  justify-content: center;
+}
+
+.contentTerminosCheckbox--checked {}
+
+.contentBtn {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.textBtnForm {
+  font-family: 'Industry';
+  width: 300px;
+  background-color: black;
+  font-style: normal;
+  font-weight: 700;
+  height: 40px;
+  font-size: 14px;
+  line-height: 0px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 2px;
+  color: #D4F93A;
+}
+
+.labelCheck {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 185%;
+  display: flex;
+  letter-spacing: 0.02em;
+  color: #001111;
+}
+
+.checkBoxGenero {
+  margin: 10px;
+}
+
+.checkBoxGenero--checked {}
+
+.succesFormModal {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.successTitleForm {
+  font-family: 'Gold';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #001111;
+  margin-bottom: 0px;
+}
+
+.textSuccessForm {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 0px;
+  line-height: 160%;
+  letter-spacing: 0.04em;
+  color: #001111;
+}
+
+.nextBtn {
+  padding-right: 10px;
+}
+@media  (min-width: 1028px) {
+  .contentInputsCliForm {
+    min-width: auto;
+  }
+  .successTitleForm{
+    font-size: 28px;
+    margin-left: 20px;
+  }
+  .textSuccessForm{
+    margin-left: 20px;
+    font-size: 14px;
+  }
+}
+@media  (max-width: 1028px) {
+  .contentInputsCliForm {
+    min-width: auto;
+  }
+  .successTitleForm{
+    font-size: 24px;
+    margin-left: 10px;
+  }
+  .textSuccessForm{
+    margin-left: 10px;
+    font-size: 12px;
+  }
+  .succesFormModal img{
+    max-width: 90px;
+  }
+}

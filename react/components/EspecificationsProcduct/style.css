@@ -1,0 +1,70 @@
+/* Style the button that is used to open and close the collapsible content */
+.descriptionContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 90%;
+    margin: auto;
+}
+.collapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    border-bottom: #001111 1px solid;
+  }
+  
+
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+  }
+.divContent{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0.04em;
+    color: #9C9C9C;
+}
+.headerCollapse{
+    font-family: 'Industry';
+    font-style: normal;
+    /* font-weight: 600; */
+    font-size: 19px;
+    line-height: 160%;
+    display: flex;
+    letter-spacing: 0.02em;
+    color: #001111;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.specificationTitle{
+    font-weight: 900;
+}
+.specificationValue{
+    margin-left: 20px;
+}
+.specificationRow{
+    border: #9C9C9C solid 1px;
+}
+.contentDescription,.contentGuiaTallas,.contentCuidados{
+
+}
+.hidden{
+    display: none!important;
+}
+.imgmiddle{
+    justify-content: center;
+    margin: 10px auto;
+}

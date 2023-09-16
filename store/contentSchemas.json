@@ -1,0 +1,33 @@
+{
+  "definitions": {
+    "CustomMetasInjection": {
+      "type": "object",
+      "title": "Custom Meta Tags",
+      "properties": {
+        "metas": {
+          "type": "array",
+          "title": "Meta Tags",
+          "items": {
+            "properties": {
+              "property": {
+                "$ref": "app:vtex.native-types#/definitions/text",
+                "default": "",
+                "title": "Property"
+              },
+              "name": {
+                "$ref": "app:vtex.native-types#/definitions/text",
+                "default": "",
+                "title": "Name"
+              },
+              "content": {
+                "$ref": "app:vtex.native-types#/definitions/text",
+                "default": "",
+                "title": "Content"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
