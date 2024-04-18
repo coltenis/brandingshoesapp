@@ -1,0 +1,5 @@
+declare module 'vtex.render-runtime'
+declare module 'vtex.store-drawer'
+declare module 'vtex.store-icons'
+declare module 'vtex.product-context/useProduct'
+declare module 'vtex.slider'

@@ -69,7 +69,7 @@ const CustomFilters=()=>{
         }
         body > div.render-container.render-route-store-search-subcategory > div > div.vtex-store__template.bg-base > div > div:nth-child(5) > div > div > section > div.relative.justify-center.flex > div > div:nth-child(2) > div > div > div > div:nth-child(1) > div > div > div:nth-child(1) > div > div:nth-child(2) > div > div > div.vtex-search-result-3-x-filter__container.vtex-search-result-3-x-filter__container--filters-native-scroll.vtex-search-result-3-x-filter__container--hidden.bb.b--muted-4.vtex-search-result-3-x-filter__container--priceRange > div.vtex-search-result-3-x-filter.vtex-search-result-3-x-filter--filters-native-scroll.vtex-search-result-3-x-filter--hidden.pv5.vtex-search-result-3-x-filterAvailable.vtex-search-result-3-x-filterAvailable--filters-native-scroll.vtex-search-result-3-x-filterAvailable--hidden > div > div > span:before{
             content:"Rango de Precios";
-            font-family: 'Industry';
+            font-family: 'Founders Grotesk'';
             font-style: normal;
             font-size: 19px;
             line-height: 160%;

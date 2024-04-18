@@ -1,15 +1,12 @@
 
 import React, { useState } from 'react';
 import { useMutation } from 'react-apollo';
-
 import { Input, Checkbox } from 'vtex.styleguide';
 
 import createDocument from '../../graphql/mutation.createDocument.gql';
-
 import styles from './styles.css'
 import ArrowNext from './components/ArrowNext';
 import SuccessResponse from './components/SuccessResponse';
-
 import { validateEmail } from '../../utils/validateEmail';
 import { onlyNumbers } from '../../utils/onlyNumbers';
 
@@ -67,6 +64,7 @@ const CustomNewsletter = () : JSX.Element => {
     if (property === "email") {
       isPassed = validateEmail(newsletterForm.email); 
     }
+
     if (property === "phone") {
       isPassed = newsletterForm.phone.length === 10;
     }
@@ -155,6 +153,7 @@ const CustomNewsletter = () : JSX.Element => {
         Genero=${gender},
         policheck=${termsAndConditions}
       `
+
       console.log('SEND DATA ERROR: An error ocurred while sending data to the entity (MI) in MasterData: ', e, ' DATA SENT: ', dataSent);
     }
   }
@@ -181,7 +180,7 @@ const CustomNewsletter = () : JSX.Element => {
           <div className={styles.inputsTextCliForm}>
             <Input
               required
-              autoComplete={"off"}
+              autoComplete="off"
               name="email"
               type="email"
               placeholder="Email"
@@ -196,7 +195,7 @@ const CustomNewsletter = () : JSX.Element => {
           <div className={`${styles.inputsTextCliForm} ${!errorEmail ? styles.show : styles.hidden}`}>
             <Input
               required
-              autoComplete={"off"}
+              autoComplete="off"
               maxLength={10}
               name="phone"
               type="text"

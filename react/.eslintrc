@@ -1,3 +1,21 @@
 {
-  "extends": "vtex-react/io"
+  "extends": "vtex-react/io",
+  "rules": {
+    "prettier/prettier": [
+      "off",
+      {
+        "singleQuote": true
+      }
+    ],
+    "jsx-a11y/aria-role": [
+      "off",
+      {
+        "ignoreNonDOM": true
+      }
+    ],
+    "@typescript-eslint/no-use-before-define": ["off"],
+    "@typescript-eslint/consistent-type-imports": ["off"],
+    "@typescript-eslint/camelcase": ["off"],
+    "no-restricted-globals": ["error", "isNaN"]
+  }
 }
