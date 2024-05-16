@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-
 import { useProduct } from 'vtex.product-context';
 import { canUseDOM } from 'vtex.render-runtime';
 
@@ -23,6 +22,7 @@ const CustomSizeSelector = (): JSX.Element => {
   const getSizeEquivalenciesAPI = useCallback(async()=> {
     setCustomSizes([]);
     const response = await getSizeEquivalencies();
+
     setCustomSizes(response);
   }, [])
   
@@ -42,11 +42,13 @@ const CustomSizeSelector = (): JSX.Element => {
 
       if (!customSizesFilteredByBrandAndCategory.length) {
         setIsRenderedCustomSizes(true);
+
         return;
       }
 
       selectOptions?.forEach((option: any)=>{
         const { COL, EUR, US } = customSizesFilteredByBrandAndCategory[0];
+
         US.forEach((size, index) => {
           if (size === option.value.replace(',','.')) {
             option.innerText = `USA:${US[index]} - EUR:${EUR[index]} - COL:${COL[index]}`

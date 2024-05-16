@@ -56,7 +56,7 @@ const CustomSearchBarLegacy=()=>{
             </svg>
             <style>
             {`#menu-item-category-women,#menu-item-category-home,#menu-item-custom-sale{
-                font-family: 'Industry';
+                font-family: 'Founders Grotesk'';
                 font-style: normal;
                 font-weight: 600;
                 font-size: 19px;

@@ -1,44 +1,52 @@
 {
-  "custom-search-bar":{
-      "component":"CustomSearchBar",
-      "render": "lazy"
-  },
-  "custom-search-filters":{
-      "component":"CustomFilters",
-      "render": "lazy"
-  },
-  "variation-talla":{
-      "component":"GetTalla",
-      "render": "lazy"
-  },
-  "product-especifications":{
-      "component":"EspecificationsProduct",
-      "render": "lazy"
-  },
-  "custom-contact-form":{
-      "component":"ContactForm"
-  },
-
-  "custom-size-selector":{
-    "component":"CustomSizeSelector"
-  },
-  "custom-product-specifications":{
-    "component":"CustomProductSpecifications"
-  },
-  "custom-size-guide":{
-    "component":"CustomSizeGuide"
-  },
-  "custom-newsletter":{
-    "component":"CustomNewsletter"
-  },
-  "custom-search-bar-legacy":{
-    "component":"CustomSearchBarLegacy",
+  "custom-search-bar": {
+    "component": "CustomSearchBar",
     "render": "lazy"
   },
-  "custom-metas-injection":{
-    "component":"CustomMetasInjection",
+  "custom-search-filters": {
+    "component": "CustomFilters",
+    "render": "lazy"
+  },
+  "variation-talla": {
+    "component": "GetTalla",
+    "render": "lazy"
+  },
+  "product-especifications": {
+    "component": "EspecificationsProduct",
+    "render": "lazy"
+  },
+  "custom-contact-form": {
+    "component": "ContactForm"
+  },
+
+  "custom-size-selector": {
+    "component": "CustomSizeSelector"
+  },
+  "custom-product-specifications": {
+    "component": "CustomProductSpecifications"
+  },
+  "custom-size-guide": {
+    "component": "CustomSizeGuide"
+  },
+  "custom-newsletter": {
+    "component": "CustomNewsletter"
+  },
+  "custom-search-bar-legacy": {
+    "component": "CustomSearchBarLegacy",
+    "render": "lazy"
+  },
+  "custom-metas-injection": {
+    "component": "CustomMetasInjection",
     "content": {
       "$ref": "app:bscolombia.bs-apps#/definitions/CustomMetasInjection"
     }
+  },
+  "header.full": {
+    "component": "Header",
+    "composition": "children"
+  },
+  "custom-gallery-product": {
+    "component": "GalleryProduct",
+    "composition": "children"
   }
 }
