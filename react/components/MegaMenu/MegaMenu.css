@@ -93,6 +93,7 @@
     align-items: center;
     column-gap: 0.5rem;
     font-size: 14px;
+    color: var(--color-white);
   }
 
   .mega-menu__options :global(.vtex-login-2-x-container) {
@@ -127,6 +128,11 @@
     font-weight: 400;
   }
 
+  .mega-menu__sub-category:hover,
+  .mega-menu__sub-category a:hover {
+    color: var(--color-white);
+  }
+
   .mega-menu__category {
     font-size: 13px;
   }
@@ -144,7 +150,7 @@
 }
 
 .drawerHeader {
-  background-color: #011;
+  background-color: var(--color-black);
   justify-content: space-between;
   align-items: center;
 }
@@ -155,4 +161,11 @@
 
 .closeIcon {
   color: var(--color-white);
+}
+
+@media (max-width: 968px) {
+  .drawerHeader :global(.vtex-minicart-2-x-minicartQuantityBadge) {
+    color: #000;
+    background-color: white;
+  }
 }

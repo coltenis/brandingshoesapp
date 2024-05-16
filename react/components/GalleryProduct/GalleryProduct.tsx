@@ -1,18 +1,33 @@
-import React, { useState } from 'react'
-import { Slider, Slide, SliderContainer } from 'vtex.slider'
+import React, { useEffect, useState } from 'react'
+import { Slider, Slide } from 'vtex.slider'
 import { useProduct } from 'vtex.product-context'
 import { useRuntime } from 'vtex.render-runtime'
 
 import styles from './styles.css'
-import { ArrowRenderProps } from './interface'
+import { ArrowRenderProps, ImagesProduct } from './interface'
 
-export const GalleryProduct = () => {
+export const GalleryProduct: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [firstTwoImages, setFirstTwoImages] = useState<ImagesProduct[]>([])
+  const [imagesSlider, setImagesSlider] = useState<ImagesProduct[]>([])
   const productContext = useProduct() ?? {}
   const { deviceInfo } = useRuntime()
   const { isMobile } = deviceInfo
   const imagesProduct = productContext.selectedItem?.images
   const perPage = 1
+
+  useEffect(() => {
+    if (!imagesProduct) {
+      return
+    }
+
+    const firstTwo = imagesProduct.slice(0, 2)
+    const rest = imagesProduct.slice(2)
+
+    setFirstTwoImages(firstTwo)
+    setImagesSlider(rest)
+    handleChangeSlide(1)
+  }, [imagesProduct])
 
   const handleChangeSlide = (imageIndex: number) => {
     setCurrentSlide(imageIndex)
@@ -75,43 +90,52 @@ export const GalleryProduct = () => {
 
   return (
     <>
+      <div className={styles['gallery-product__container']}>
+        {firstTwoImages?.map((image) => (
+          <div style={{ width: '50%' }} key={image.imageId}>
+            <img
+              width="100%"
+              height="auto"
+              src={image.imageUrl}
+              alt={image.imageLabel}
+            />
+          </div>
+        ))}
+      </div>
       <div className={styles['gallery-product__container--slider']}>
         <div className={styles['gallery-product__slider']}>
-          <SliderContainer autoplay>
-            <Slider
-              loop
-              easing="ease"
-              duration={500}
-              perPage={perPage}
-              currentSlide={currentSlide}
-              arrowRender={arrowRender}
-              onChangeSlide={handleChangeSlide}
-              arrowsContainerComponent={arrowContainerRender}
-              threshold={50}
-            >
-              {imagesProduct?.map((image) => (
-                <Slide
-                  className="slide-css-class"
-                  sliderTransitionDuration={500}
-                  key={image.imageId}
-                  defaultWidth={280}
-                >
-                  <picture>
-                    <img src={image.imageUrl} alt={image.imageLabel} />
-                  </picture>
-                </Slide>
-              ))}
-            </Slider>
-          </SliderContainer>
+          <Slider
+            loop
+            easing="ease"
+            duration={500}
+            perPage={perPage}
+            currentSlide={currentSlide}
+            arrowRender={arrowRender}
+            onChangeSlide={handleChangeSlide}
+            arrowsContainerComponent={arrowContainerRender}
+            threshold={50}
+          >
+            {imagesSlider?.map((image) => (
+              <Slide
+                sliderTransitionDuration={500}
+                key={image.imageId}
+                defaultWidth={280}
+              >
+                <picture>
+                  <img src={image.imageUrl} alt={image.imageLabel} />
+                </picture>
+              </Slide>
+            ))}
+          </Slider>
         </div>
         {isMobile ? (
           <></>
         ) : (
           <div className={styles['gallery-product__container--dots']}>
-            {imagesProduct?.map((image, index) => (
-              <picture
+            {imagesSlider?.map((image, index) => (
+              <div
                 onMouseEnter={() => handleMouseEnter(index + 1)}
-                key={`dots ${image.imageLabel}`}
+                key={`dots ${image.imageId}`}
               >
                 <img
                   className={`${styles['gallery-product__dots--image']} ${
@@ -122,7 +146,7 @@ export const GalleryProduct = () => {
                   src={image.imageUrl}
                   alt={image.imageLabel}
                 />
-              </picture>
+              </div>
             ))}
           </div>
         )}

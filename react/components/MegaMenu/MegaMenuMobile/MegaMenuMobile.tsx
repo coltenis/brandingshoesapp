@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Drawer, DrawerHeader, DrawerCloseButton } from 'vtex.store-drawer'
 import { Icon } from 'vtex.store-icons'
+import { Link } from 'vtex.render-runtime'
 
 import { MegaMenuMobileProps } from '../interface'
 import styles from '../MegaMenu.css'
@@ -42,6 +43,19 @@ export const MegaMenuMobile: React.FC<MegaMenuMobileProps> = ({
     event: React.MouseEvent
   ) => {
     event.stopPropagation()
+    event.preventDefault()
+    const target = event.target as HTMLElement
+
+    if (target.tagName.toLowerCase() === 'a') {
+      const href = target.getAttribute('href')
+
+      if (href) {
+        window.location.href = href
+      }
+
+      return
+    }
+
     setExpandedItems((prevState) => ({
       ...prevState,
       categories: {
@@ -149,9 +163,14 @@ export const MegaMenuMobile: React.FC<MegaMenuMobileProps> = ({
                           key={subCategory.__editorItemTitle}
                           className={styles['mega-menu__sub-category']}
                         >
-                          <a href={subCategory.url}>
+                          <Link
+                            href={subCategory.url}
+                            onClick={(event: React.MouseEvent) =>
+                              event.preventDefault()
+                            }
+                          >
                             {subCategory.__editorItemTitle}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>

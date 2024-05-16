@@ -1,38 +1,70 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 import styles from './styles.css'
 
-
 interface Props {
-  SearchBar: React.ComponentType;
+  SearchBar: React.ComponentType
 }
 
-const CustomSearchBar = ({SearchBar}: Props) : JSX.Element => {
-
-  const [showSearchBar, setShowSearchBar] = useState(false);
+const CustomSearchBar = ({ SearchBar }: Props): JSX.Element => {
+  const [showSearchBar, setShowSearchBar] = useState(false)
 
   return (
     <div className={styles.searchBarContainer}>
-      {
-        showSearchBar 
-          ?
-            (
-              <div className={styles.searchBarWrapper}>
-                <div className={styles.closeSearchBarBtn} onClick={() => setShowSearchBar(false)}>X</div>
-                <SearchBar />
-              </div>
-            ) 
-          : <></>
-      }
-      <div className={styles.searchBtn} onClick={() => setShowSearchBar(true)}>
-        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.22754 16.9615C10.2484 16.9615 11.2593 16.7605 12.2025 16.3698C13.1457 15.9791 14.0027 15.4065 14.7246 14.6846C15.4465 13.9627 16.0191 13.1057 16.4098 12.1625C16.8005 11.2193 17.0016 10.2084 17.0016 9.1875C17.0016 8.1666 16.8005 7.15569 16.4098 6.2125C16.0191 5.26931 15.4465 4.41231 14.7246 3.69042C14.0027 2.96854 13.1457 2.39591 12.2025 2.00522C11.2593 1.61454 10.2484 1.41346 9.22754 1.41346C7.16574 1.41346 5.18838 2.23251 3.73046 3.69042C2.27255 5.14834 1.4535 7.1257 1.4535 9.1875C1.4535 11.2493 2.27255 13.2267 3.73046 14.6846C5.18838 16.1425 7.16574 16.9615 9.22754 16.9615ZM18.415 9.1875C18.415 11.6242 17.4471 13.9611 15.7241 15.684C14.0011 17.407 11.6642 18.375 9.22754 18.375C6.79086 18.375 4.45399 17.407 2.731 15.684C1.00801 13.9611 0.0400391 11.6242 0.0400391 9.1875C0.0400391 6.75082 1.00801 4.41395 2.731 2.69096C4.45399 0.967966 6.79086 0 9.22754 0C11.6642 0 14.0011 0.967966 15.7241 2.69096C17.4471 4.41395 18.415 6.75082 18.415 9.1875Z" fill="white"/>
-          <path d="M14.4775 16.0604C14.5123 16.1068 14.5495 16.1509 14.5913 16.1938L19.0585 20.6599C19.2761 20.8775 19.5713 20.9999 19.8791 21C20.1869 21.0001 20.4821 20.878 20.6998 20.6605C20.9176 20.4429 21.0399 20.1479 21.04 19.8402C21.0401 19.5324 20.918 19.2373 20.7004 19.0196L16.2331 14.5535C16.1916 14.5115 16.147 14.4727 16.0997 14.4375C15.6445 15.058 15.0975 15.6056 14.4775 16.0615V16.0604Z" fill="white"/>
+      {showSearchBar ? (
+        <div className={styles.searchBarWrapper}>
+          <div
+            role="presentation"
+            className={styles.closeSearchBarBtn}
+            onClick={() => setShowSearchBar(false)}
+          >
+            X
+          </div>
+          <SearchBar />
+        </div>
+      ) : (
+        <></>
+      )}
+      <div
+        role="presentation"
+        className={styles.searchBtn}
+        onClick={() => setShowSearchBar(true)}
+      >
+        <svg
+          version="1.1"
+          width={21}
+          height={21}
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 100 100"
+          stroke="currentColor"
+        >
+          <style>
+            {`
+        .st0{fill:none;stroke:#020202;stroke-width:10;stroke-miterlimit:10;}
+        .st1{fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:10;}
+        .st2{fill:none;stroke:#000000;stroke-width:11;stroke-miterlimit:10;}
+        .st3{stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+        .st4{fill:none;stroke:#000000;stroke-width:17;stroke-miterlimit:10;}
+        .st5{fill:#FFFFFF;}
+        .st6{fill:none;stroke:#020202;stroke-miterlimit:10;}
+        .st7{fill:none;stroke:#000000;stroke-miterlimit:10;}
+      `}
+          </style>
+          <g>
+            <path
+              className="st7"
+              d="M72.8,40.1c-0.4,8.3-3.7,15.7-8.9,21.4c-1.4,1.5-2.9,2.9-4.5,4.1c-6.3,4.8-14.2,7.5-22.7,7.1 C17.6,71.8,3,55.6,4,36.6C4.9,17.6,21.1,3,40.1,4C59.1,5,73.7,21.1,72.8,40.1z"
+            />
+            <path
+              className="st3"
+              d="M95.6,93.9l-1.5,1.6c-0.7,0.8-2,0.8-2.8,0.1l-32-29.8c1.6-1.2,3.1-2.6,4.5-4.1l31.6,29.5 C96.2,91.8,96.3,93.1,95.6,93.9z"
+            />
+          </g>
         </svg>
       </div>
     </div>
-  );
-
-};
+  )
+}
 
 export default CustomSearchBar
