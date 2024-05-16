@@ -1,7 +1,7 @@
 {
   "vendor": "bscolombia",
   "name": "bs-apps",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "title": "Branding Shoes App",
   "description": "Customs apps",
   "builders": {
@@ -36,9 +36,7 @@
   "billingOptions": {
     "type": "sponsored"
   },
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "policies": [
     {
       "attrs": {
