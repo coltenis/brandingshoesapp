@@ -95,7 +95,7 @@ export const MegaMenuMobile: React.FC<MegaMenuMobileProps> = ({
               INICIO
             </a>
           </li>
-          {options.map((option) => (
+          {options?.map((option) => (
             <li
               role="presentation"
               onClick={() => handleClickOption(option.__editorItemTitle)}
@@ -124,7 +124,7 @@ export const MegaMenuMobile: React.FC<MegaMenuMobileProps> = ({
                     : ''
                 }`}
               >
-                {option.categories.map((category) => (
+                {option.categories?.map((category) => (
                   <li
                     role="presentation"
                     className={styles['mega-menu__category']}
@@ -158,7 +158,7 @@ export const MegaMenuMobile: React.FC<MegaMenuMobileProps> = ({
                           : ''
                       }`}
                     >
-                      {category.subCategories.map((subCategory) => (
+                      {category?.subCategories?.map((subCategory) => (
                         <li
                           key={subCategory.__editorItemTitle}
                           className={styles['mega-menu__sub-category']}
